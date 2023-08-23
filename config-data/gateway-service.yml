@@ -16,14 +16,14 @@ spring:
           enabled: true
       routes:
         - id: user-msvc  
-        - uri: lb://user-msvc
+          uri: lb://user-msvc
           predicates:
             - Path=/users/**
         - id: car-msvc  
-        - uri: lb://car-msvc
+          uri: lb://car-msvc
           predicates:
             - Path=/cars/**            
         - id: bike-msvc  
-        - uri: lb://bike-msvc
+          uri: lb://bike-msvc
           predicates:
-            - Path=/bikes/**          
+            - Path=/bikes/**            
