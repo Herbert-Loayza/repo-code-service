@@ -33,12 +33,12 @@ public class UserService {
     }
 
     public List<Car>getCars(Integer userId){
-        List<Car>cars = restTemplate.getForObject("http://localhost:8002/cars/byuser/"+userId, List.class);
+        List<Car>cars = restTemplate.getForObject("http://car-msvc/cars/byuser/"+userId, List.class);
         return cars;
     }
 
     public List<Bike>getBikes(Integer userId){
-        List<Bike>bikes = restTemplate.getForObject("http://localhost:8003/bikes/byuser/"+userId, List.class);
+        List<Bike>bikes = restTemplate.getForObject("http://bike-msvc/bikes/byuser/"+userId, List.class);
         return bikes;
     }
 
