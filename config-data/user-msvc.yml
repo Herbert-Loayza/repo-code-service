@@ -24,4 +24,4 @@ spring:
         use_sql_comments: false
         format_sql: false
   application:
-    name: bike-msvc
+    name: user-msvc
