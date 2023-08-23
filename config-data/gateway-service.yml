@@ -1,0 +1,29 @@
+server:
+  port: 8080
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url: 
+      default-zone: http://localhost:8761/eureka
+  instance:
+    instance-id: localhost
+spring:
+  cloud:
+    gateway:
+      discovery: 
+        locator:
+          enabled: 
+      routes:
+        - id: user-msvc  
+        - uri: lb://user-msvc
+          predicates:
+            - Path=/users/**
+        - id: car-msvc  
+        - uri: lb://car-msvc
+          predicates:
+            - Path=/cars/**            
+        - id: bike-msvc  
+        - uri: lb://bike-msvc
+          predicates:
+            - Path=/bikes/**          
