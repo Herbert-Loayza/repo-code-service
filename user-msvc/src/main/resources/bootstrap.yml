@@ -6,21 +6,3 @@ spring:
     config:
       enabled: true
       uri: http://localhost:8005
-
-#server:
-#  port: 8001
-  datasource:
-    url: jdbc:mysql://localhost:3306/service_transport
-    driverClassName: com.mysql.jdbc.Driver
-    username: root
-    password: herberT1
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        show_sql: true
-        use_sql_comments: false
-        format_sql: false
-

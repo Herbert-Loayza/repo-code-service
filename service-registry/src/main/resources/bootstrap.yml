@@ -1,6 +1,7 @@
+
 spring:
   application:
-    name: bike-msvc
+    name: eureka-service
   cloud:
     config:
       enabled: true
