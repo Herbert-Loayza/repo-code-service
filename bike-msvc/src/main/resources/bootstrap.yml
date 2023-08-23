@@ -6,7 +6,6 @@ spring:
       enabled: true
       uri: http://localhost:8005
 
-
 #server:
 #  port: 8003
 #spring:
