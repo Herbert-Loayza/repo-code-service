@@ -5,6 +5,7 @@ import com.example.user.msvc.entity.User;
 import com.example.user.msvc.models.Bike;
 import com.example.user.msvc.models.Car;
 import com.example.user.msvc.service.UserService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,6 +47,8 @@ public class UserController {
         return ResponseEntity.ok(user1);
     }
 
+
+//    @CircuitBreaker(name = "car-msvcCB", fallbackMethod = "fallbackGetCars")
     @GetMapping("/cars/{userId}")
     public ResponseEntity<List<Car>>getCars(@PathVariable("userId")Integer userId){
         User user= userService.getUserById(userId);
@@ -56,7 +59,7 @@ public class UserController {
         return ResponseEntity.ok(cars);
     }
 
-
+//    @CircuitBreaker(name = "bike-msvcCB", fallbackMethod = "fallbackGetBikes")
     @GetMapping("/bikes/{userId}")
     public ResponseEntity<List<Bike>>getBikes(@PathVariable("userId")Integer userId){
         User user= userService.getUserById(userId);
